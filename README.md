@@ -57,7 +57,7 @@ Usage
 
 ## Requirements
 
-* [lodash.js](https://lodash.com) (>= 3.5.0, full build)
+* [lodash.js](https://lodash.com) (>= 4.17.10, full build)
 * [jQuery](http://jquery.com) (>= 3.1.0)
 
 Note: You can still use [underscore.js](http://underscorejs.org) (>= 1.7.0) instead of lodash.js
@@ -80,9 +80,9 @@ Note: You can still use [underscore.js](http://underscorejs.org) (>= 1.7.0) inst
 * Using CDN:
 
 ```html
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.3.0/gridstack.min.css" />
-<script type="text/javascript" src='//cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.3.0/gridstack.min.js'></script>
-<script type="text/javascript" src='//cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.3.0/gridstack.jQueryUI.min.js'></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.min.css" />
+<script type="text/javascript" src='//cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.min.js'></script>
+<script type="text/javascript" src='//cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.jQueryUI.min.js'></script>
 ```
 
 * Using bower:
@@ -216,18 +216,18 @@ For 4-column grid it should be:
 
 and so on.
 
-Here is a SASS code snipped which can make life easier (Thanks to @ascendantofrain, [#81](https://github.com/gridstack/gridstack.js/issues/81)):
+Here is a SASS code snippet which can make life easier (Thanks to @ascendantofrain, [#81](https://github.com/gridstack/gridstack.js/issues/81) and @StefanM98, [#868](https://github.com/gridstack/gridstack.js/issues/868)):
 
 ```sass
-.grid-stack-item {
+.grid-stack > .grid-stack-item {
 
     $gridstack-columns: 12;
 
     @for $i from 1 through $gridstack-columns {
         &[data-gs-width='#{$i}'] { width: (100% / $gridstack-columns) * $i; }
         &[data-gs-x='#{$i}'] { left: (100% / $gridstack-columns) * $i; }
-        &.grid-stack-item[data-gs-min-width='#{$i}'] { min-width: (100% / $gridstack-columns) * $i; }
-        &.grid-stack-item[data-gs-max-width='#{$i}'] { max-width: (100% / $gridstack-columns) * $i; }
+        &[data-gs-min-width='#{$i}'] { min-width: (100% / $gridstack-columns) * $i; }
+        &[data-gs-max-width='#{$i}'] { max-width: (100% / $gridstack-columns) * $i; }
     }
 }
 ```
